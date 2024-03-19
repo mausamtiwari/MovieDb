@@ -1,0 +1,5 @@
+CREATE TABLE genre
+(
+    genreId INT PRIMARY KEY AUTO_INCREMENT,
+    genre VARCHAR(255)
+);

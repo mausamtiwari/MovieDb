@@ -61,10 +61,11 @@ WHERE genre = 'Horror';
 
 # 9. Bedenk een manier om niet gebruikte genres te tonen, indien er een genre niet gebruikt wordt. (Deze vraag heeft
 #    GEEN resultaat)
-SELECT movie.movieId AS movieId, movie.title AS MovieTitle, genre.genre AS Genre
-FROM movie
-         RIGHT JOIN movie_genre on movie_genre.genreId = movie.movieId
-         RIGHT JOIN genre on movie_genre.movieId = genre.genreId;
+SELECT genre.genreId, genre.genre
+FROM genre
+         LEFT JOIN movie_genre  ON genre.genreId = movie_genre.genreId
+WHERE movie_genre.genreId IS NULL;
+
 
 ## Tabel: person, movie_cast
 
@@ -84,8 +85,11 @@ LIMIT 5;
 #     resultaat alfabetisch volgens title.(gebruik hier een subquery voor)
 
 
-
-
+SELECT title AS MoviesLongerThanAverageDuration
+FROM movie
+WHERE duration > (SELECT AVG(duration)
+                  FROM movie)
+ORDER BY title;
 
 
 

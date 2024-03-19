@@ -4,3 +4,9 @@ CREATE TABLE language
     language   VARCHAR(255)
 );
 
+INSERT INTO language (language)
+VALUES ('Nederlands'),
+       ('Frans'),
+       ('Engels'),
+       ('Portugees'),
+       ('Spaans');

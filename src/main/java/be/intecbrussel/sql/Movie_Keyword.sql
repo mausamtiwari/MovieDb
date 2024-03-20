@@ -5,9 +5,10 @@ CREATE TABLE movie_keyword
 
     PRIMARY KEY (movieId, keywordId),
 
-    FOREIGN KEY (movieId) REFERENCES Movie (movieId),
-    FOREIGN KEY (keywordId) REFERENCES Keyword (keywordId)
+    FOREIGN KEY (movieId) REFERENCES movie (movieId),
+    FOREIGN KEY (keywordId) REFERENCES keyword (keywordId)
 );
+
 
 INSERT INTO movie_keyword(movieId, keywordId)
 VALUES (1, 1),
